@@ -266,7 +266,8 @@ header {
     margin: 10px auto;
 }
 .explore-link {
-    width: max-content;
+    width: min-content;
+    text-align: center;
     margin: 20px auto;
     padding: 10px 20px;
     background-color: #3498db;
@@ -853,7 +854,7 @@ footer h3{
     }
     .contentbox p:not(.home-content p) {
         text-align: justify;
-        padding: 0.2rem;
+        padding: 0.5rem;
     }
     .contentbox >div:not(.home-content >div,.contactus-content >div){
         margin: 1rem auto;
@@ -914,6 +915,11 @@ footer h3{
     }
     .contact-info{
         flex-direction: column;
+        padding: 0;
+    }
+    .contact-infos{
+        padding: 0;
+        text-align: center;
     }
     .contact-info-profiles{
         text-align: center;
@@ -921,7 +927,7 @@ footer h3{
         padding: 0.1rem;
     }
     .contact-info img{
-        min-width:90vw;
+        min-width:70vw;
     }
     .contact-info-profiles p{
         margin: 1px;
