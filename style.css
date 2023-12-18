@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body{margin: 0;
@@ -97,7 +98,6 @@ header {
 }
 .marquee-scroll {
     width: 80%;
-    overflow-x: hidden;
     justify-content: space-between;
     gap: 10vw;
     flex-wrap: nowrap;
@@ -145,15 +145,17 @@ header {
     text-align: center;
 }
 .menu-option-links {
-    color: #ddf;
     width: min-content;
     text-wrap: nowrap;
     font-size: 1.2rem;
 }
+.menu-option{
+    color: #efefef;
+}
 .menu-option:hover {
     background-color: #e2e2e2;
+    color: #000;
 }
-
 .menu-option-links:hover,.menu-option-links:active{
     color: #000;
     text-decoration: underline;
@@ -340,10 +342,11 @@ header {
 .academic-img-details p{
     font-size: 0.7rem;
 }
-.click-img-to-know-more-para{
-    font-size: 12px;
-    padding: 0;
+.click-img-to-know-more-para {
+    font-size: 14px;
+    padding: 2px;
     margin: 0;
+    display: none;
 }
 /*======= ========= HOME- STUDENT LIFE  ========== ====*/
 .studentlife-imgs-box {
@@ -533,10 +536,13 @@ header {
 .vhs-application-form script{
     background-color: #000;
     padding: 50px;
-
 }
 .vhs-application-form p{
     font-size: 1.2rem;
+    padding: 1px;
+}
+.vhs-application-form h4{
+    margin: 2px;
 }
 .vhs-application-form a{
     margin: auto;
@@ -604,6 +610,8 @@ header {
 .contact-info-profiles >h4{
     font-size: 1.3rem;
     margin: 2px;
+    text-shadow: 1px 1px 10px #fff;
+    color:#173c9a;
 }
 .contact-info-profiles p{
     font-size: clamp(10px,1rem,14px);
@@ -613,7 +621,7 @@ header {
 .contact-info-profiles p:nth-child(2){
     font-weight: bold;
     font-size: clamp(14px,1.2rem,16px);
-    color: white;
+    color: #a02323;
 }
 .contact-info-profiles a{
     color: #000;
@@ -770,17 +778,20 @@ footer h3{
     .menu-navbar {
         display: none;
     }
+    .marquee-scroll{
+        width: 90%;
+    }
+    .marquee-section{
+        padding: 0;
+    }
     .menubox {
         display: block;
-    }
-    .menu-option-links:hover{
-        color: #000;
-    }
-    .menu-option-links:active{
-        color: #000;
+        border-left: 2px solid #808080;
     }
     .image-slider-box{
-        height:400px;
+        height:300px;
+        z-index: 1;
+        background-color: #000;
     }
     .slide-img{
         background-size: contain;
@@ -796,8 +807,15 @@ footer h3{
         border-top-right-radius: 50%;
         border-bottom-right-radius: 50%;
     }
+
     .welcome-box{
+        width: 98%;
+        margin: 2px auto;
         padding: 1px;
+    }
+    .welcome-para{
+        padding: 0.5rem;
+        margin: 0;
     }
     .vhs-rightsentence{
         text-wrap: wrap;
@@ -809,31 +827,84 @@ footer h3{
     }
     .home-academics-imgs-box{
         display: grid;
-        grid-template-columns:40% 40%;
+        grid-template-columns:48% 48%;
         gap: 1%;
     }
     .home-academics-imgs-box img{
         width: 100%;
         height: auto;
-    }    
+    }
+    .home-headings {
+        width: 100%;
+        padding: 10px 0px;
+        margin: 10px auto;
+    }
+    .home-headings h2{
+        margin: 10px auto;
+        font-size: 1.3rem;
+        text-wrap: balance;
+    }
+    .text-overlay{
+        font-size: 1.2rem;
+    }
+
+    .contentbox:not(.home-content,.contactus-content){
+        width: 98%;
+        margin: 1px auto;
+    }
+    .contentbox p:not(.home-content p) {
+        text-align: justify;
+        padding: 0.2rem;
+    }
+    .contentbox >div:not(.home-content >div,.contactus-content >div){
+        margin: 1rem auto;
+        padding: 0.5rem;
+    }
+
+    .aboutus-boxes{
+        padding: 5px;
+    }
     .academic-img-details{
         text-shadow: 5px 5px 30px black;
+    }
+    .click-img-to-know-more-para{
+        display: block;
+        margin: 5px auto;
     }
     .studentlife-img-box {
         width: 100%;
         height: 200px;
     }
+    .activity{
+        background-color: rgb(226 226 226);
+    }
+    .activities-img-box >img {
+        width: 80%;
+        height: auto;
+    }
+    .facility-intro-para{
+        text-align: justify;
+    }
     .facility-imgs-box{
         flex-direction: column;
         flex-wrap: wrap;
+        padding: 0.5rem 0;
+        background-color:rgb(226 226 226);
     }
     .facility-imgs-box >img{
-        max-width: 60vw;
+        max-width: 300px;
         height: max-content;
     }
     .facility-info{
         width: 100%;
         viewport-fit:cover;
+    }
+    .facility-info p{
+        text-align: justify;
+        padding: 0 0.5rem;
+    }
+    .contactus-content p{
+        padding: 0;
     }
     .contactus-school-img-box img{
         width: 100vw;        
@@ -847,11 +918,15 @@ footer h3{
     }
     .contact-info-profiles{
         text-align: center;
+        width: 100%;
+        padding: 0.1rem;
     }
     .contact-info img{
         min-width:90vw;
     }
-
+    .contact-info-profiles p{
+        margin: 1px;
+    }
 
 
     .foot-links-box{
