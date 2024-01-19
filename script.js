@@ -28,16 +28,9 @@ if (window.innerWidth <= 612) {
         });
     }
 }
-else if (window.innerWidth >= 613) {
-    /*==========   HAMBURGER ICON FOR - TABS AND DESKTOP SIZE  =============  */
-    menucolor();
-    console.log(window.innerWidth);
-}
 
 if (window.location.pathname.split('/').pop() === 'index.html' || window.location.pathname.split('/').pop() === '') {
     // Handle mouseover and mouseout events to stop and start auto-sliding
-    menucolor()
-
     var slider_1 = document.querySelector('.sliding-images-box');
     if (slider_1) {
         /* ========= IMAGES SLIDING ==========*/
@@ -87,3 +80,8 @@ if (window.location.pathname.split('/').pop() === 'index.html' || window.locatio
 //========== =====  HAMBURGER ICON END 
 //-----------------------------------------------------------
 
+console.log(window.innerWidth);
+
+document.addEventListener('DOMContentLoaded', function() {
+    menucolor();
+});
