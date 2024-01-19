@@ -1,4 +1,5 @@
 function menucolor(){
+    console.log("menucolor runned")
     var listItems = document.querySelectorAll('#navbar li');
     listItems.forEach(function (li) {
         // Check if li and anchor are not null or undefined
@@ -10,6 +11,7 @@ function menucolor(){
                 if (fileName === window.location.pathname.split('/').pop()) {
                     li.style.backgroundColor = 'black'; // Set the background color as needed
                     anchor.style.color = 'white';
+                    console.log("menucolor changed");
                 }
             }
         }
@@ -31,10 +33,11 @@ else if (window.innerWidth >= 613) {
     menucolor();
     console.log(window.innerWidth);
 }
-if (window.location.pathname.split('/').pop() === 'index.html') {
+
+if (window.location.pathname.split('/').pop() === 'index.html' || window.location.pathname.split('/').pop() === '') {
     // Handle mouseover and mouseout events to stop and start auto-sliding
     menucolor()
-    
+
     var slider_1 = document.querySelector('.sliding-images-box');
     if (slider_1) {
         /* ========= IMAGES SLIDING ==========*/
