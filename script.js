@@ -10,7 +10,7 @@ function menucolor() {
     all_menu_link.forEach(function (current_link) {
         // Add a leading '/' to current_link.href for comparison
         if (current_link.href.endsWith(File_location) || 
-            (File_location === "/" && current_link.href.endsWith("/")) ) {
+            (File_location === "/" && current_link.href.endsWith("/")) || (File_location === "" && current_link.href.endsWith("")) ) {
             current_link.style.backgroundColor = "black";
         }
     });
