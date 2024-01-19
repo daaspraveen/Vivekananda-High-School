@@ -1,22 +1,22 @@
-function menucolor(){
-    console.log("menucolor runned")
-    var listItems = document.querySelectorAll('#navbar li');
-    listItems.forEach(function (li) {
-        // Check if li and anchor are not null or undefined
-        if (li instanceof HTMLElement) {
-            var anchor = li.querySelector('a');
-            if (anchor) {
-                var href = anchor.getAttribute('href');
-                var fileName = href; // Extracting the file name from the href
-                if (fileName === window.location.pathname.split('/').pop()) {
-                    li.style.backgroundColor = 'black'; // Set the background color as needed
-                    anchor.style.color = 'white';
-                    console.log("menucolor changed");
-                }
-            }
+
+function menucolor() {
+    var File_location = window.location.pathname.split('/').pop();
+
+    const navbar = document.getElementById("navbar");
+    const all_menu_link = document.querySelectorAll(".menu-li a");
+
+    all_menu_link.forEach(function (menulink) {
+        menulink.style.backgroundColor = "none";
+    });
+
+    all_menu_link.forEach(function (current_link) {
+        // Add a leading '/' to current_link.href for comparison
+        if (current_link.href.endsWith(File_location)) {
+            current_link.style.backgroundColor = "black";
         }
     });
-}
+};
+
 
 if (window.innerWidth <= 612) {
     /*==========  HAMBURGER ICON FOR - MOBILE SIZE =============  */
@@ -84,4 +84,4 @@ console.log(window.innerWidth);
 
 document.addEventListener('DOMContentLoaded', function() {
     menucolor();
-});
+})
