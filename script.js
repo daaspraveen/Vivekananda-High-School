@@ -1,5 +1,5 @@
 function menucolor() {
-    var File_location = window.location.pathname.split('/').pop();
+    var File_location = window.location.pathname;
 
     const all_menu_link = document.querySelectorAll(".menu-li a");
 
@@ -9,13 +9,13 @@ function menucolor() {
 
     all_menu_link.forEach(function (current_link) {
         // Add a leading '/' to current_link.href for comparison
-        if (current_link.href.endsWith(File_location)) {
+        if (current_link.href.endsWith(File_location) || 
+            (File_location === "/" && current_link.href.endsWith("/")) ) {
             current_link.style.backgroundColor = "black";
-        } else {
-            current_link.style.backgroundColor = "none";
         }
     });
 };
+
 
 
 if (window.innerWidth <= 612) {
