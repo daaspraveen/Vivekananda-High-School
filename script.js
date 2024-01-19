@@ -26,7 +26,7 @@ else if (window.innerWidth >= 613) {
         }
     });
 }
-if (window.location.pathname.split('/').pop() === 'index.html') {
+if (window.location.pathname.split('/').pop() === 'index.html' || window.location.pathname.split('/').pop() === '') {
     // Handle mouseover and mouseout events to stop and start auto-sliding
     var slider_1 = document.querySelector('.sliding-images-box');
     if (slider_1) {
