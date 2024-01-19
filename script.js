@@ -1,8 +1,6 @@
-
 function menucolor() {
     var File_location = window.location.pathname.split('/').pop();
 
-    const navbar = document.getElementById("navbar");
     const all_menu_link = document.querySelectorAll(".menu-li a");
 
     all_menu_link.forEach(function (menulink) {
@@ -13,6 +11,8 @@ function menucolor() {
         // Add a leading '/' to current_link.href for comparison
         if (current_link.href.endsWith(File_location)) {
             current_link.style.backgroundColor = "black";
+        } else {
+            current_link.style.backgroundColor = "none";
         }
     });
 };
